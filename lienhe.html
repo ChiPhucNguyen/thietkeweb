@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Liên hệ</title>
+  <style>
+    :root {
+      --accent: #ffcc00;
+      --text: #111;
+      --bg: #fff;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #f9f9f9;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-section h1 {
+      color: var(--accent);
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+   .contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 thẻ trên 1 hàng */
+  gap: 30px;
+}
+
+.contact-card {
+  background: #fff;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* chiều cao cố định, tất cả thẻ bằng nhau */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+    .contact-card h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar').innerHTML = data)
+      .catch(err => console.error('Không tải được navbar:', err));
+  </script>
+  <!-- NAVBAR -->
+
+  <section class="contact-section">
+  <h1>Liên hệ với chúng tôi</h1>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@sotagroup.vn</p>
+    </div>
+    <div class="contact-card">
+      <h3>Số điện thoại</h3>
+      <p>0939.857.111</p>
+    </div>
+    <div class="contact-card">
+      <h3>Địa chỉ</h3>
+      <p>60 Đường số 1, KDC Cityland Park Hills, P.Gò Vấp, TP. HCM</p>
+    </div>
+    <div class="contact-card">
+      <h3>Fanpage</h3>
+      <p>facebook.com/sotagroup</p>
+    </div>
+    <div class="contact-card">
+      <h3>Zalo</h3>
+      <p>0985.528.427</p>
+    </div>
+    <div class="contact-card">
+      <h3>Hỗ trợ trực tuyến</h3>
+      <p>sotagroup.vn</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

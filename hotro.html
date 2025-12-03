@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hỗ trợ khách hàng — SOTA</title>
+  <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --accent: #ffcc00;
+      --text: #111;
+      --bg: #fff;
+      --radius: 12px;
+      --shadow: rgba(0,0,0,0.15);
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; font-family: Inter, sans-serif; }
+
+    body { background: #f9f9f9; color: var(--text); }
+
+    /* Hero */
+    .hero {
+      color: #111;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; line-height: 1.6; }
+
+    /* Form đăng ký hỗ trợ */
+    .support-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px 25px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px var(--shadow);
+      text-align: center;
+    }
+
+    .support-form h2 { color: var(--accent); margin-bottom: 10px; font-size: 28px; }
+    .support-form p { margin-bottom: 20px; line-height: 1.5; }
+
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 5px; }
+    .form-group input,
+    .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid var(--accent); border-radius: var(--radius); font-size: 14px; transition: 0.3s; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: #ffaa00; box-shadow: 0 0 8px rgba(255,204,0,0.4); }
+
+    .support-form button {
+      padding: 12px 28px; background: var(--accent); border:none; color: #111; font-weight:700; border-radius: var(--radius); cursor:pointer; transition:0.3s; font-size:16px;
+    }
+    .support-form button:hover { background: #ffaa00; box-shadow: 0 5px 15px var(--shadow); }
+
+    /* Thông tin liên hệ */
+    .contact-info {
+      max-width: 1000px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .contact-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 6px 15px var(--shadow);
+      transition: 0.3s;
+    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--shadow); }
+    .contact-card h3 { color: var(--accent); margin-bottom: 10px; }
+    .contact-card p { font-size: 15px; line-height: 1.5; }
+
+    /* FAQ / Tính năng */
+    .features {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 15px var(--shadow);
+      transition: 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--shadow); }
+    .feature-card h4 { color: var(--accent); margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('navbar').innerHTML = data; })
+      .catch(err => console.error('Không tải được navbar:', err));
+  </script>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Hỗ trợ khách hàng chuyên nghiệp</h1>
+    <p>Chúng tôi luôn sẵn sàng giúp bạn triển khai website nhanh chóng và hiệu quả.</p>
+  </section>
+
+  <!-- Form hỗ trợ -->
+  <section class="support-form">
+    <h2>Đăng ký nhận hỗ trợ</h2>
+    <p>Nhập thông tin để được tư vấn nhanh nhất</p>
+    <form>
+      <div class="form-group">
+        <label for="name">Họ và tên</label>
+        <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Nhu cầu / Yêu cầu</label>
+        <textarea id="message" name="message" placeholder="Mô tả nhu cầu của bạn" rows="4"></textarea>
+      </div>
+      <button type="submit">Nhận hổ trợ</button>
+    </form>
+  </section>
+
+  <!-- Thông tin liên hệ -->
+  <section class="contact-info">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>hotro@sotagroup.vn</p>
+    </div>
+    <div class="contact-card">
+      <h3>Điện thoại</h3>
+      <p>+84 123 456 789</p>
+    </div>
+    <div class="contact-card">
+      <h3>Địa chỉ</h3>
+      <p>123 Đường Số 1, Quận 1, TP.HCM</p>
+    </div>
+  </section>
+
+  <!-- FAQ / tính năng -->
+  <section class="features">
+    <div class="feature-card">
+      <h4>Tư vấn chuyên nghiệp</h4>
+      <p>Đội ngũ hỗ trợ tận tâm, luôn giải đáp mọi thắc mắc của khách hàng.</p>
+    </div>
+    <div class="feature-card">
+      <h4>Hỗ trợ nhanh chóng</h4>
+      <p>Phản hồi trong vòng 24 giờ, giúp bạn triển khai dự án kịp thời.</p>
+    </div>
+   
+    <div class="feature-card">
+      <h4>Bảo trì & nâng cấp</h4>
+      <p>Hỗ trợ nâng cấp, bảo trì website để luôn hoạt động ổn định và hiệu quả.</p>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Đặt hàng thiết kế website</title>
+  <style>
+    :root {
+      --accent: #ffcc00;
+      --text: #111;
+      --bg: #fff;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #f9f9f9;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    .order-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .order-section h1 {
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background: var(--accent);
+      color: var(--text);
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #e6b800;
+    }
+
+    @media (max-width: 768px) {
+      .order-section {
+        margin: 20px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar').innerHTML = data)
+      .catch(err => console.error('Không tải được navbar:', err));
+  </script>
+  <!-- NAVBAR -->
+
+  <section class="order-section">
+    <h1>Đặt hàng thiết kế website</h1>
+    <form action="#" method="post">
+      <div>
+        <label for="name">Họ và tên</label>
+        <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+      </div>
+      
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+      </div>
+
+      <div>
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" placeholder="0123456789" required>
+      </div>
+
+      <div>
+        <label for="website-type">Loại website</label>
+        <select id="website-type" name="website-type" required>
+          <option value="">-- Chọn loại website --</option>
+          <option value="company">Website doanh nghiệp</option>
+          <option value="ecommerce">Website bán hàng</option>
+          <option value="portfolio">Website cá nhân</option>
+          <option value="other">Khác</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="budget">Ngân sách (VNĐ)</label>
+        <input type="number" id="budget" name="budget" placeholder="VD: 15000000" required>
+      </div>
+
+      <div>
+        <label for="deadline">Thời gian hoàn thành mong muốn</label>
+        <input type="date" id="deadline" name="deadline" required>
+      </div>
+
+      <div>
+        <label for="expectation">Website tham khảo của quý khách</label>
+        <input type="text" id="expect" name="expect" placeholder="thietkeweb.com" required>
+      </div>
+
+      <div>
+        <label for="requirements">Yêu cầu / Ghi chú</label>
+        <textarea id="requirements" name="requirements" placeholder="Mô tả chi tiết về website bạn muốn..."></textarea>
+      </div>
+
+      <button type="submit">Gửi yêu cầu</button>
+    </form>
+  </section>
+
+</body>
+</html>
